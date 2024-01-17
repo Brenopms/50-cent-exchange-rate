@@ -172,5 +172,6 @@ dist
 .idea
 
 
-# Images folder
+# Media folders
 images
+songs
