@@ -17,7 +17,7 @@ const saveVideo = (
         reject(err);
       })
       .on("end", (output: unknown) => {
-        return resolve(finalVideoPath);
+        resolve(finalVideoPath);
       });
   });
 };
