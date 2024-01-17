@@ -7,7 +7,7 @@ const saveSong = async (songName: string, song: ArrayBuffer): Promise<void> => {
 const saveSongsPromises = topSongsJSON.data.map(async (song) => {
   const songResponse = await fetch(song.previewUrl);
   const songArrayBuffer = await songResponse.arrayBuffer();
-  await saveSong(song.name, songArrayBuffer);
+  await saveSong(song.name.replace(/ /g,"-"), songArrayBuffer);
 });
 
 await Promise.all(saveSongsPromises);

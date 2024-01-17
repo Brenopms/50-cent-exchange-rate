@@ -1,16 +1,12 @@
 import { readdir } from "node:fs/promises";
 import sharp from "sharp";
 
-const getRandomImageName = async (imagesFolderPath: string) => {
-  const fileNames = await readdir(imagesFolderPath);
-  const randomIndex = Math.floor(Math.random() * fileNames.length);
-  return fileNames[randomIndex];
-};
+import { getNormalizedRandomFileName } from "../helpers/get-normalized-random-file-name";
 
 const getRandomImage = async (
   imagesFolderPath: string
 ): Promise<ArrayBuffer> => {
-  const imageName = await getRandomImageName(imagesFolderPath);
+  const imageName = await getNormalizedRandomFileName(imagesFolderPath);
   const image = Bun.file(`${imagesFolderPath}/${imageName}`).arrayBuffer();
   return image;
 };
