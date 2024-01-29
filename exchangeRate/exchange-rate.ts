@@ -1,8 +1,10 @@
-import { FROM_CURRENCY, TO_CURRENCY } from "..";
 import {
   ExchangeRateResponse,
   ExchangeRateValue,
 } from "./exchange-rates.entities";
+
+export const FROM_CURRENCY = process.env.FROM_CURRENCY;
+export const TO_CURRENCY = process.env.TO_CURRENCY;
 
 export const getExchangeRate = async (): Promise<ExchangeRateValue> => {
   const currencyKey = `${FROM_CURRENCY}${TO_CURRENCY}` as const;

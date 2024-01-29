@@ -1,10 +1,7 @@
-import { getExchangeRate } from "./exchangeRate/exchange-rate";
+import { getExchangeRate } from './exchangeRate/exchange-rate';
 import { getNormalizedRandomFileName } from "./helpers/get-normalized-random-file-name";
 import { generateImage } from "./imageLoader/image-loader";
 import { createVideo } from "./videoLoader/video-loader";
-
-export const FROM_CURRENCY = "USD" as const;
-export const TO_CURRENCY = "BRL" as const;
 
 const exchangeRate = await getExchangeRate();
 

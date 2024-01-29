@@ -1,4 +1,4 @@
-import { FROM_CURRENCY, TO_CURRENCY } from "..";
+import { FROM_CURRENCY, TO_CURRENCY } from "./exchange-rate";
 
 export type ExchangeRate = {
   code: string;
